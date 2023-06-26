@@ -9,6 +9,13 @@ export type AlbumType = {
   trackCount: number;
 };
 
+export type AlbumCardType = {
+  artistName: string;
+  collectionId: number;
+  collectionName: string;
+  key: number;
+};
+
 export type UserType = {
   name: string;
   email: string;

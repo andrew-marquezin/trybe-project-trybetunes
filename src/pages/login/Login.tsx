@@ -4,17 +4,9 @@ import { createUser } from '../../services/userAPI';
 
 function Login() {
   const [nameValue, setNameValue] = useState('');
-  const [disabledBtn, setDisabledBtn] = useState(true);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setNameValue(e.target.value);
-    if (nameValue.length >= 2) {
-      setDisabledBtn(false);
-    } else setDisabledBtn(true);
-  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -38,12 +30,12 @@ function Login() {
             type="text"
             name="name"
             value={ nameValue }
-            onChange={ handleChange }
+            onChange={ ({ target }) => setNameValue(target.value) }
             data-testid="login-name-input"
           />
         </label>
         <button
-          disabled={ disabledBtn }
+          disabled={ nameValue.length < 3 }
           data-testid="login-submit-button"
         >
           Entrar
