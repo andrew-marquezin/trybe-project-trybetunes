@@ -32,6 +32,7 @@ function Search() {
             collectionName={ e.collectionName }
             artistName={ e.artistName }
             collectionId={ e.collectionId }
+            artworkUrl100={ e.artworkUrl100 }
           />
         ))}
       </>

@@ -13,6 +13,7 @@ export type AlbumCardType = {
   artistName: string;
   collectionId: number;
   collectionName: string;
+  artworkUrl100: string;
   key: number;
 };
 
